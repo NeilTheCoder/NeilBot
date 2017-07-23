@@ -15,7 +15,7 @@
 ## Linux    
 ### Must have the Following Requirements
 **1. NodeJS 8+**  
-**2. Large amount of Space ( Recomended for Future Updates.**  
+**2. Large amount of Space ( Recomended for Future Updates )**  
   
 **What to do:**  
 - **Install files by typing on the Terminal `git clone git@github.com:NeilTheCoder/NeilBot.git`**  
