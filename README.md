@@ -1,2 +1,2 @@
-# NeilBot
-A Basic Selfbot coded in the Discord.js Library!
+# Installation
+**- 2 Sections!**
