@@ -4,7 +4,7 @@ const credentials = require('./credentials.json');
 let prefix = "Your Prefix";
 
 bot.on('ready', () => {
-    console.log(`===================================\n\n     I| Selfbot 1.0 |I     \n\nUser\'s Username: ${bot.user.tag}\nPrefix: ${prefix}\nBot ID: ${bot.user.id}\nCurrently in: ${bot.guilds.size} Guilds\n\n===================================`)
+    console.log(`===================================\n\n     I| Selfbot 1.0.1 |I     \n\nUser\'s Username: ${bot.user.tag}\nPrefix: ${prefix}\nBot ID: ${bot.user.id}\nCurrently in: ${bot.guilds.size} Guilds\n\n===================================`)
 });
 
 bot.on('ready', () => {
