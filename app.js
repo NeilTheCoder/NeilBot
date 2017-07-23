@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
-let prefix = "//";
+const credentials = require('./credentials.json');
+let prefix = "Your Prefix";
 
 bot.on('ready', () => {
     console.log(`===================================\n\n     I| Selfbot 1.0 |I     \n\nUser\'s Username: ${bot.user.tag}\nPrefix: ${prefix}\nBot ID: ${bot.user.id}\nCurrently in: ${bot.guilds.size} Guilds\n\n===================================`)
@@ -30,7 +31,7 @@ bot.on('message', message => {
     } else
     if(message.content.startsWith(prefix + 'kiss')) {
         if(message.author !== bot.user) return;
-        message.delete()node app;
+        message.delete();
         var user = message.mentions.users.first();
         if(!user)
             return message.channel.send(`**Please specify a user to Kiss! :open_mouth: **`);
