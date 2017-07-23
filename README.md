@@ -1,2 +1,2 @@
 # Installation
-**- 2 Sections!**
+- **2 Sections!**
