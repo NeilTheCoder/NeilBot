@@ -107,4 +107,4 @@ bot.on('message', message => {
 
 bot.login(credentials.token)
 
-// This Selfbot was made by Neil#8331
+// This Selfbot was made by Neil#8331 and PepperJS#7290
