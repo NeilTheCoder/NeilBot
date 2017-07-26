@@ -27,7 +27,12 @@
 ## Version
 
 ### Currently in
-**Version 1.0.1**
+**Version 1.0.2**
 
 ## Soon to be
-**Version 1.0.2**
+**Version 1.0.3**
+
+## Updates
+**Added:**  
+**Ban Command**  
+**Kick Command!**
