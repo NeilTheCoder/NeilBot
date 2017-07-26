@@ -4,7 +4,7 @@ const credentials = require('./credentials.json');
 let prefix = "Your Prefix";
 
 bot.on('ready', () => {
-    console.log(`===================================\n\n     I| Selfbot 1.0.1 |I     \n\nUser\'s Username: ${bot.user.tag}\nPrefix: ${prefix}\nBot ID: ${bot.user.id}\nCurrently in: ${bot.guilds.size} Guilds\n\n===================================`)
+    console.log(`===================================\n\n     I| Selfbot 1.0.2 |I     \n\nUser\'s Username: ${bot.user.tag}\nPrefix: ${prefix}\nBot ID: ${bot.user.id}\nCurrently in: ${bot.guilds.size} Guilds\n\n===================================`)
 });
 
 bot.on('ready', () => {
@@ -75,8 +75,33 @@ bot.on('message', message => {
         return message.channel.send(`**Please add a Game to it!**`);
         message.channel.send(`**Changed my Stream Status to:\n__${game}__**`)
         bot.user.setGame(game, `https://twitch.tv/123`)
-    }
+    } else
+    if(message.content.startsWith(prefix + 'kick')) {
+        if(message.author !== bot.user) return;
+            let reasonmod = args.slice(1).join(' ');
+            var user = message.mentions.users.first();
+            let member = message.member.guild(user);
+        if(!message.member.hasPermission('KICK_MEMBERS'))
+            return message.channel.send(`**I made this Selfbot not for abuse!\nYou need the \`\Kick Members\`\ Permission! :no_entry_sign:**`)
+        if(!user)
+            return message.channel.send(`**You can't kick yourself! :no_entry_sign:\nNext time, specify a user! :ok_hand:**`);
+        if(!reasonmod)
+            return message.channel.send(`**Supply a reason for the kick!**`);
+        message.channel.send(`**User Got Kicked!\n\nUsername: ${user.tag}\nResponsible Kicker: ${message.author}\nReason: ${reasonmod}**`)
+        member.kick();
+     } else
+     if(message.content.startsWith(prefix + 'ban')) {
+        if(!message.member.hasPermission('BAN_MEMBERS'))
+            return message.channel.send(`**I made this Selfbot not for abuse!\nYou need the \`\Ban Members\`\ Permission! :no_entry_sign:**`)
+        if(!user)
+            return message.channel.send(`**You can't ban yourself! :no_entry_sign:\nNext time, specify a user! :ok_hand:**`);
+        if(!reasonmod)
+            return message.channel.send(`**Supply a reason for the kick!**`);
+        message.channel.send(`**User Got Banned!\n\nUsername: ${user.tag}\nResponsible Banner: ${message.author}\nReason: ${reasonmod}**`)
+        member.ban();
+     }
 });
 
-
 bot.login(credentials.token)
+
+// This Selfbot was made by Neil#8331
