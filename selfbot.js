@@ -1,10 +1,10 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 const credentials = require('./credentials.json');
-let prefix = "Your Prefix";
+let prefix = "//";
 
 bot.on('ready', () => {
-    console.log(`===================================\n\n     I| Selfbot 1.0.2 |I     \n\nUser\'s Username: ${bot.user.tag}\nPrefix: ${prefix}\nBot ID: ${bot.user.id}\nCurrently in: ${bot.guilds.size} Guilds\n\n===================================`)
+    console.log(`Warning: Please don't do the ${prefix}ban and ${prefix}kick commands in DM!  ===================================\n\n     I| Selfbot 1.0.2 |I     \n\nUser\'s Username: ${bot.user.tag}\nPrefix: ${prefix}\nBot ID: ${bot.user.id}\nCurrently in: ${bot.guilds.size} Guilds\n\n===================================`)
 });
 
 bot.on('ready', () => {
@@ -78,9 +78,10 @@ bot.on('message', message => {
     } else
     if(message.content.startsWith(prefix + 'kick')) {
         if(message.author !== bot.user) return;
+		message.delete();
             let reasonmod = args.slice(1).join(' ');
             var user = message.mentions.users.first();
-            let member = message.member.guild(user);
+            let member = message.guild.member(user);
         if(!message.member.hasPermission('KICK_MEMBERS'))
             return message.channel.send(`**I made this Selfbot not for abuse!\nYou need the \`\Kick Members\`\ Permission! :no_entry_sign:**`)
         if(!user)
@@ -91,7 +92,9 @@ bot.on('message', message => {
         member.kick();
      } else
      if(message.content.startsWith(prefix + 'ban')) {
-        if(!message.member.hasPermission('BAN_MEMBERS'))
+        if(message.author !== bot.user) return;
+		message.delete();
+		if(!message.member.hasPermission('BAN_MEMBERS'))
             return message.channel.send(`**I made this Selfbot not for abuse!\nYou need the \`\Ban Members\`\ Permission! :no_entry_sign:**`)
         if(!user)
             return message.channel.send(`**You can't ban yourself! :no_entry_sign:\nNext time, specify a user! :ok_hand:**`);
