@@ -65,7 +65,7 @@ bot.on('message', message => {
     if(message.content.startsWith(prefix + 'help')) {
         if(message.author !== bot.user) return;
         message.delete();
-        message.channel.send(`**\`\`\`\A Perfectly Good Help Message!\n\nCommands List:\n${prefix}ping - Pong!\n${prefix}setgame - Sets your game!\n${prefix}setstream - Sets your game but Streaming!\n${prefix}rename - Changes your name\n${prefix}kiss - Kisses a User!\n${prefix}marry - Marry a User!\n${prefix}embed - Embeds stuff!\n${prefix}shutdown - Shutdowns the Bot!\`\`\`\**`)
+        message.channel.send(`**\`\`\`\A Perfectly Good Help Message!\n\nCommands List:\n${prefix}ping - Pong!\n${prefix}setgame - Sets your game!\n${prefix}setstream - Sets your game but Streaming!\n${prefix}rename - Changes your name\n${prefix}kiss - Kisses a User!\n${prefix}marry - Marry a User!\n${prefix}embed - Embeds stuff!\n${prefix}shutdown - Shutdowns the Bot!\n${prefix}kick - Kicks a User with Reason!\n${prefix}ban - Bans a User with Reason!\`\`\`\**`)
     } else
     if(message.content.startsWith(prefix + 'setstream')) {
         if(message.author !== bot.user) return;
